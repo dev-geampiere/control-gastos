@@ -6,13 +6,13 @@ import {generarId} from './helpers'
 import IconoNuevoGasto from './assets/img/nuevo-gasto.svg'
 
 function App() {
+    const [gastos, setGastos] = useState([])
+
     const [presupuesto, setPresupuesto] = useState(0)
     const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
 
     const [modal, setModal] = useState(false)
     const [animarModal, setAnimarModal] = useState(false)
-
-    const [gastos, setGastos] = useState([])
 
     const handleNuevoGasto = () => {
         setModal(true)
@@ -31,8 +31,9 @@ function App() {
         }, 500);
     }
     return (
-        <div className={modal && 'fijar'}>
+        <div className={modal ? 'fijar' : ''}>
             <Header 
+                gastos = {gastos}
                 presupuesto = {presupuesto}
                 setPresupuesto = {setPresupuesto}
                 isValidPresupuesto = {isValidPresupuesto}
