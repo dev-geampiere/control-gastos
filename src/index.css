@@ -98,12 +98,6 @@ header h1 {
     flex: 1;
     font-size: 1.6rem;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
 .formulario input[type="submit"] {
     background-color: #1048a4;
     border: none;
@@ -213,7 +207,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .contenido-presupuesto p.negativo,
 .contenido-presupuesto p.negativo span {
-    color: red;
+    color: #DC2626;
 }
 .contenido-presupuesto span {
     font-weight: 900;
