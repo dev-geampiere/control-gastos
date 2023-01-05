@@ -22,6 +22,7 @@ function App() {
     const [gastoEditar, setGastoEditar] = useState({})
 
     const [filtro, setFiltro] = useState('')
+    const [gastosFiltrados, setGastosFiltrados] = useState([])
 
     useEffect(() => {
       if ( Object.keys(gastoEditar).length > 0) {
@@ -43,8 +44,8 @@ function App() {
 
     useEffect(() => {
         if(filtro){
-            // Filtrar gastos por categorias
-            console.log('filtrando', filtro);
+            const gastosFiltrados = gastos.filter(gasto => gasto.categoria === filtro)
+            setGastosFiltrados(gastosFiltrados);
         }
     }, [filtro])
 
@@ -105,6 +106,8 @@ function App() {
                         gastos = {gastos}
                         setGastoEditar = {setGastoEditar}
                         eliminarGasto = {eliminarGasto}
+                        filtro={filtro}
+                        gastosFiltrados={gastosFiltrados}
                     />
                 </main>
                     <div className='nuevo-gasto'>
